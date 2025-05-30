@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tech - Tecnologia para Todos</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: var(--dark);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav li {
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .benefits {
+            background-color: var(--light);
+        }
+        
+        .benefit-item {
+            margin-bottom: 2rem;
+        }
+        
+        .benefit-item h3 {
+            color: var(--secondary);
+        }
+        
+        .team {
+            text-align: center;
+        }
+        
+        .team-members {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+        
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero {
+                height: 50vh;
+            }
+            
+            .team-members {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>New Tech</h1>
+            <p>Incentivando o futuro através da tecnologia</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#missao">Nossa Missão</a></li>
+            <li><a href="#equipe">Nossa Equipe</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Tecnologia Transformando Vidas</h2>
+            <p>Na New Tech, acreditamos que o acesso à tecnologia pode mudar o futuro de crianças carentes. Juntos, podemos construir um mundo mais igualitário e cheio de oportunidades.</p>
+            <a href="#missao" class="btn">Conheça Nossa Missão</a>
+        </div>
+    </section>
+    
+    <section id="missao" class="container">
+        <h2 class="section-title">Nossa Missão</h2>
+        <p>A New Tech é uma organização sem fins lucrativos dedicada a fornecer acesso à educação tecnológica para crianças carentes. Nosso objetivo é reduzir a desigualdade digital e preparar a próxima geração para os desafios do futuro.</p>
+        <p>Através de programas educacionais, doação de equipamentos e mentoria, capacitamos jovens a desenvolver habilidades em programação, robótica e outras áreas da tecnologia que são essenciais no mundo moderno.</p>
+    </section>
+    
+    <section id="equipe" class="container team">
+        <h2 class="section-title">Nossa Equipe</h2>
+        <p>Conheça os membros dedicados que tornam a New Tech possível:</p>
+        
+        <div class="team-members">
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Kaike">
+                <h3>Kaike</h3>
+                <p>Coordenador de Projetos</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Nicholas">
+                <h3>Nicholas</h3>
+                <p>Instrutor de Programação</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Raissa">
+                <h3>Raissa</h3>
+                <p>Designer Educacional</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Ryan">
+                <h3>Ryan</h3>
+                <p>Gerente de Operações</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projetos" class="container">
+        <h2 class="section-title">Nossos Projetos</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Laboratório de informática">
+                <div class="card-content">
+                    <h3>Laboratórios de Informática</h3>
+                    <p>Instalamos laboratórios de informática em comunidades carentes, equipados com computadores e internet de alta velocidade.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Aulas de programação">
+                <div class="card-content">
+                    <h3>Cursos de Programação</h3>
+                    <p>Oferecemos cursos gratuitos de programação para crianças e adolescentes, ensinando desde lógica básica até desenvolvimento web e mobile.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mentoria">
+                <div class="card-content">
+                    <h3>Programa de Mentoria</h3>
+                    <p>Conectamos jovens talentos com profissionais experientes da área de tecnologia para orientação e desenvolvimento de carreira.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="beneficios" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Benefícios da Tecnologia para Crianças</h2>
+            
+            <div class="benefit-item">
+                <h3>Desenvolvimento Cognitivo</h3>
+                <p>Aprender programação e lógica computacional estimula o pensamento crítico, a resolução de problemas e a criatividade.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <h3>Oportunidades de Carreira</h3>
+                <p>As habilidades tecnológicas abrem portas para empregos bem remunerados em um mercado em constante crescimento.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <h3>Autoestima e Confiança</h3>
+                <p>Conquistar objetivos tecnológicos, como criar um site ou aplicativo, fortalece a autoconfiança e a autoestima das crianças.</p>
+            </div>
+            
+            <div class="benefit-item">
+                <h3>Trabalho em Equipe</h3>
+                <p>Projetos tecnológicos ensinam colaboração, comunicação e habilidades sociais essenciais para o sucesso profissional.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contato" class="container">
+        <h2 class="section-title">Entre em Contato</h2>
+        <p>Quer apoiar nossa causa ou saber mais sobre nossos projetos? Entre em contato conosco!</p>
+        <p>Email: contato@newtech.org.br</p>
+        <p>Telefone: (11) 1234-5678</p>
+        <p>Endereço: Rua da Tecnologia, 123 - São Paulo/SP</p>
+    </section>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#missao">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+            <a href="#">Política de Privacidade</a>
+        </div>
+        <p>&copy; 2023 New Tech. Todos os direitos reservados.</p>
+        <p>Sua saúde e futuro importam.</p>
+    </footer>
+</body>
+</html>
